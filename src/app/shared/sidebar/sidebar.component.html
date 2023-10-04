@@ -1,0 +1,20 @@
+<div class="bg-dark border-right p-3" id="sidebar">
+
+  <h3 class="text-light">PokemonApp</h3>
+  <hr class="text-white">
+
+  <div class="list-group list-reset">
+    <button class="list-group-item list-group-item-action"
+      [routerLink]="['/pokemon/list']"
+      routerLinkActive="active"
+    >
+        Show my pokemons
+    </button>
+    <button
+      *ngFor="let pokemon of pokemonList"
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/pokemon/', pokemon.name]"
+      routerLinkActive="active"
+    >{{ pokemon.name | titlecase }}</button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row mx-4">
+  <div class="col-12 d-flex justify-content-center">
+    <h2 class="text-center pt-4">Choice your first pokemon!</h2>
+  </div>
+
+  <div class="row bg-dark col-12 p-4 m-5">
+
+    <div *ngFor="let pokemon of pokemonChoiceList"
+      class="card col-3 pokemon m-4 animate__animated animate__shakeY"
+      >
+      <shared-loader-image
+        [url]="pokemon.sprites.front_default || ''"
+        [alt]="pokemon.name"
+      ></shared-loader-image>
+      <hr>
+      <div class="card-body">
+        <h5 class="card-title"> <b>{{ pokemon.name | titlecase}} </b></h5>
+        <p class="card-text">Type: <span *ngFor="let type of pokemon.types">{{ type.type.name | titlecase }}</span></p>
+        <p class="card-text">Height: {{ pokemon.height}}</p>
+        <p class="card-text">Weigth: {{ pokemon.weight}}</p>
+        <p class="card-text">Abilities:</p>
+        <small
+            *ngFor="let ability of pokemon.abilities, let isEven = even"
+            class="btn btn-outline-secondary btn-sm m-1 text-center"
+            [ngClass]="{ 'btn-outline-primary': isEven }">
+            {{ ability.ability.name  | titlecase}}
+          </small>
+      </div>
+      <hr>
+      <div class="card-actions mb-3 text-center">
+        <button class="btn btn-primary" (click)="choicePokemon(pokemon.name)">I choice you</button>
+      </div>
+    </div>
+
+  </div>
+</div>

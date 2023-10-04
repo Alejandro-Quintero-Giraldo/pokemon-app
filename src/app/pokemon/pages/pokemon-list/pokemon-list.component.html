@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12 m-4">
+    <h4>Here you can find your pokemons or search for new partners for your adventure.</h4>
+
+    <pokemon-search-box
+      (searchPokemons)="filterPokemonsByTag($event)"
+    ></pokemon-search-box>
+  </div>
+
+  <div class="col-12 m-4">
+    <pokemon-card
+      [pokemonList]="buildPokemonList"
+      [buttons]="buildButtons"
+      [title]="buildTitle"
+      (addPokemonEvent)="addPokemon($event)"
+    ></pokemon-card>
+  </div>
+</div>
