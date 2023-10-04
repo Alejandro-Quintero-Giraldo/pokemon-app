@@ -104,22 +104,22 @@ export interface GenerationIi {
 }
 
 export interface Crystal {
-  back_default:            null;
-  back_shiny:              null;
-  back_shiny_transparent:  null;
-  back_transparent:        null;
-  front_default:           null;
-  front_shiny:             null;
-  front_shiny_transparent: null;
-  front_transparent:       null;
+  back_default:            string | null;
+  back_shiny:              string | null;
+  back_shiny_transparent:  string | null;
+  back_transparent:        string | null;
+  front_default:           string | null;
+  front_shiny:             string | null;
+  front_shiny_transparent: string | null;
+  front_transparent:       string | null;
 }
 
 export interface Gold {
-  back_default:       null;
-  back_shiny:         null;
-  front_default:      null;
-  front_shiny:        null;
-  front_transparent?: null;
+  back_default:       string | null;
+  back_shiny:         string | null;
+  front_default:      string | null;
+  front_shiny:        string | null;
+  front_transparent?: string | null;
 }
 
 export interface GenerationIii {

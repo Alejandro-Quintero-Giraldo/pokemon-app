@@ -3,9 +3,12 @@ import { createFeature, createReducer, on } from '@ngrx/store'
 import { addPokemon, getAllPokemons, getAllPokemonsFailed, getAllPokemonsSuccess, getPokemon, getPokemonFailed, getPokemonListInit, getPokemonListInitFailed, getPokemonListInitSuccess, getPokemonSuccess, getPokemonsByTag, getPokemonsByTagFailed, getPokemonsByTagSuccess } from "../actions/pokemon.actions";
 import { EntityAdapter, EntityState, createEntityAdapter } from "@ngrx/entity";
 import { SmallPokemon } from "src/app/pokemon/interfaces/small-pokemon.interface";
+import { HttpErrorResponse } from "@angular/common/http";
 
 export interface  PokemonState extends EntityState<Pokemon> {
-  data: SmallPokemon[]
+  loading: boolean;
+  error: HttpErrorResponse | null;
+  data: SmallPokemon[];
   pokemonListInit: Pokemon[];
   pokemonsConsulted: Pokemon[];
   pokemonConsulted: Pokemon | null;

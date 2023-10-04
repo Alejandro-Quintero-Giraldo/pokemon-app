@@ -5,7 +5,6 @@ import { Observable, map } from 'rxjs';
 import { baseUrl } from 'src/environments/environment';
 import { Pokemon } from '../interfaces/pokemon.interface';
 import { ResultPokemon, SmallPokemon } from '../interfaces/small-pokemon.interface';
-import { getPokemon } from '../../state/actions/pokemon.actions';
 
 @Injectable({
   providedIn: 'root'
